@@ -35,7 +35,7 @@ python tests/test_temporizador.py
 motor_matematico/   Lógica pura (combinatoria, backtracking, recurrencias). No depende de Pygame.
 interfaz/            Renderizado y manejo de eventos con Pygame.
 tests/                Pruebas de consola de los módulos matemáticos.
-docs/                 Documentación de soporte matemático 
+docs/                 Documentación de soporte matemático (para el artículo técnico).
 ```
 
 ## Controles
@@ -45,5 +45,10 @@ docs/                 Documentación de soporte matemático
 - Tecla `R`: rota/refleja la pieza activa a su siguiente configuración.
 - Tecla `H`: pide una pista (usa el mismo backtracking del solver).
 
+## Estado actual del proyecto
 
+_(completar antes de la entrega: qué funciona, qué falta, limitaciones conocidas)_
 
+## Integrantes y aportes
+
+_(completar con la tabla de contribuciones que exige la rúbrica del curso)_

@@ -1,10 +1,5 @@
 """
 test_solver.py
---------------
-Pruebas de consola para el backtracking, ANTES de tocar Pygame.
-No usa ningún framework de testing todavía (podrías migrar a pytest
-después); por ahora son asserts simples y prints legibles, suficiente
-para la fase de desarrollo y para mostrar evidencia en el artículo.
 """
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -16,13 +11,7 @@ from motor_matematico.solver import resolver, cabe, colocar, generar_nivel_valid
 
 
 def test_caso_resoluble():
-    """
-    Un tablero 2x4 (8 celdas) con dos piezas 'O' (2x2 cada una, 4 celdas):
-    2 x 4 = 8 celdas, y es geométricamente obvio que dos cuadrados 2x2 caben
-    uno al lado del otro. Es un caso trivial a propósito, para verificar
-    que el solver SÍ encuentra soluciones cuando existen (no solo que
-    detecta cuando no las hay).
-    """
+
     tablero = crear_tablero(2, 4)
     piezas = [TETROMINOS["O"], TETROMINOS["O"]]
     resultado = resolver(tablero, piezas)

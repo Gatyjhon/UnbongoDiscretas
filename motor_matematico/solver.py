@@ -13,12 +13,12 @@ def cabe(tablero, pieza, fila, col):
         return False
 
     region = tablero[fila:fila + filas_p, col:col + cols_p]
-    # region > 0  -> celda ya ocupada por CUALQUIER pieza anterior (no solo id 1)
-    # pieza == 1  -> celda que esta pieza quiere ocupar
-    return not np.any((region > 0) & (pieza == 1))
+    mascara_pieza = pieza == 1
+    return bool(np.all(region[mascara_pieza] == 0))
 
 
 def colocar(tablero, pieza, fila, col, valor):
+   
     filas_p, cols_p = pieza.shape
     region = tablero[fila:fila + filas_p, col:col + cols_p]
     mascara = pieza == 1
@@ -26,7 +26,6 @@ def colocar(tablero, pieza, fila, col, valor):
 
 
 def resolver(tablero, piezas, indice=0):
-
     if indice == len(piezas):
         return True  # Hoja de éxito: no quedan piezas por colocar
 
@@ -51,7 +50,6 @@ def resolver(tablero, piezas, indice=0):
 
 
 def encontrar_siguiente_pista(tablero, piezas, indice_actual):
-
     copia = tablero.copy()
     pieza_original = piezas[indice_actual]
     configuraciones = generar_configuraciones(pieza_original)
@@ -78,7 +76,8 @@ def generar_nivel_valido(filas, columnas, banco_piezas, cantidad_piezas, intento
         piezas_elegidas = random.sample(list(banco_piezas.values()), cantidad_piezas)
         tablero_prueba = crear_tablero(filas, columnas)
         if resolver(tablero_prueba, piezas_elegidas):
-            return piezas_elegidas, tablero_prueba  # tablero_prueba ya queda con la solución de referencia
+            mascara_forma = tablero_prueba > 0
+            return piezas_elegidas, mascara_forma
 
     raise RuntimeError(
         "No se encontró una combinación solucionable en el número de intentos dado. "
