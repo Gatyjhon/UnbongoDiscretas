@@ -5,7 +5,6 @@ temporizador.py
 
 class Temporizador:
     def __init__(self, tiempo_inicial=60, d=5, tiempo_minimo=15, tiempo_maximo=120):
-
         self.T = tiempo_inicial
         self.d = d
         self.tiempo_minimo = tiempo_minimo
@@ -13,7 +12,6 @@ class Temporizador:
         self.historial = [tiempo_inicial]  # guardamos T_0, T_1, T_2... para poder graficarlo en el artículo
 
     def siguiente_tiempo(self, pistas_usadas):
-
         p = 4 - pistas_usadas
         nuevo_T = self.T - self.d * (4 - p)
 
@@ -28,3 +26,4 @@ class Temporizador:
         """Vuelve a T_0, por ejemplo si el jugador empieza una partida nueva."""
         self.T = tiempo_inicial if tiempo_inicial is not None else self.historial[0]
         self.historial = [self.T]
+

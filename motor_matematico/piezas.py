@@ -48,4 +48,3 @@ def generar_configuraciones(matriz):
             configuraciones.add(clave)
 
     return [np.array(c) for c in configuraciones]
-
