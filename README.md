@@ -7,6 +7,7 @@ final del curso Matemáticas Discretas I (Universidad Nacional de Colombia).
 
 - Python 3.10+
 - pip
+-git
 
 ## Instalación
 
@@ -47,8 +48,8 @@ docs/                 Documentación de soporte matemático (para el artículo t
 
 ## Estado actual del proyecto
 
-_(completar antes de la entrega: qué funciona, qué falta, limitaciones conocidas)_
+_(Se tiene una version ya terminada pulida del videojuego)_
 
 ## Integrantes y aportes
 
-_(completar con la tabla de contribuciones que exige la rúbrica del curso)_
+_(Proyecto individual por John Angel Novoa Martinez)_
